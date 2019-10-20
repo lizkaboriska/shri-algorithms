@@ -1,12 +1,13 @@
-let min;
 function selectionSearch(arr) {
   let sorted_arr = [];
-  for (let i = 0; i < arr.lentgth; i++) {
+  let min = 0;
+  while (arr.length > 0) {
     min = Math.min(...arr);
-    sorted_arr.push(min);
-    for (let j = 0; j < arr.lentgth; j++) {
-      if ((arr[j] = min)) {
-        arr.splice(0, i);
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] == min) {
+        arr.splice(j, 1);
+        sorted_arr.push(min);
+        break;
       }
     }
   }
